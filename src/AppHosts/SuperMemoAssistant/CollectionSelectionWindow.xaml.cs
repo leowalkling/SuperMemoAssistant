@@ -149,8 +149,18 @@ namespace SuperMemoAssistant
       }
     }
 
+    private void item_DblClick(object sender, RoutedEventArgs e)
+    {
+      startForSelectedCollection();
+    }
+
     private void btnOpen_Click(object          sender,
                                RoutedEventArgs e)
+    {
+      startForSelectedCollection();
+    }
+
+    private void startForSelectedCollection()
     {
       // Check sm executable exists
       if (new FilePath(_config.SMBinPath).Exists() == false)
@@ -162,7 +172,7 @@ namespace SuperMemoAssistant
         );
         return;
       }
-      
+
       // Check collection exists
       Collection = (SMCollection)lbCollections.SelectedItem;
 

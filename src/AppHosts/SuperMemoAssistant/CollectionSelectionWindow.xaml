@@ -42,6 +42,11 @@
              Grid.Row="0"
              HorizontalContentAlignment="Stretch"
              ItemsSource="{Binding Source={StaticResource SortedCollections}}">
+      <ListBox.ItemContainerStyle>
+        <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+          <EventSetter Event="MouseDoubleClick" Handler="item_DblClick"/>
+        </Style>
+      </ListBox.ItemContainerStyle>
       <ListBox.ItemTemplate>
         <DataTemplate DataType="core:SMCollection">
           <Grid Margin="4">
